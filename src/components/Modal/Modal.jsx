@@ -4,6 +4,7 @@ import { Overlay, ModalContainer, Img} from './Modal.module';
 
 export const Modal = ({ onClose, largeImageURL, alt }) => {
 
+  // onClose();
   //!================================================================
   useEffect(() => {
     const handleKeydown = e => {
@@ -17,7 +18,7 @@ export const Modal = ({ onClose, largeImageURL, alt }) => {
     return (
       window.removeEventListener('keydown', handleKeydown)
     )
-  }, [onClose])
+  }, [onClose]) //!   <================================
   //!================================================================
   
 
