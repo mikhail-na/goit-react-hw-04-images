@@ -8,25 +8,25 @@ export const Modal = ({ onClose, largeImageURL, alt }) => {
   //!================================================================
   useEffect(() => {
     const handleKeydown = e => {
-      console.log(e);
-      if (e.code === 'Escape') {
-        console.log(e.code);
-        onClose();
-
-      }
+      if (e.code === 'Escape') onClose();
+        // console.log(e.code);
     };
+    
 
-    window.addEventListener('keydown', handleKeydown)
 
-    return (
-      window.removeEventListener('keydown', handleKeydown)
-    )
+    window.addEventListener('keydown',  handleKeydown);
+
+
+    return () => {
+      window.removeEventListener('keydown', handleKeydown);
+    }
+
   }, [onClose]) //!   <================================
   //!================================================================
   
 
-  const handleOverlayClick = (e) => {
-    console.log(e);
+  function handleOverlayClick(e) {
+    // console.log(e);
     if (e.currentTarget === e.target) {
       onClose();
     }
