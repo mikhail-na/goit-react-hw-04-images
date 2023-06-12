@@ -8,8 +8,11 @@ export const Modal = ({ onClose, largeImageURL, alt }) => {
   //!================================================================
   useEffect(() => {
     const handleKeydown = e => {
+      console.log(e);
       if (e.code === 'Escape') {
+        console.log(e.code);
         onClose();
+
       }
     };
 
@@ -22,7 +25,8 @@ export const Modal = ({ onClose, largeImageURL, alt }) => {
   //!================================================================
   
 
-   const handleOverlayClick = (e) => {
+  const handleOverlayClick = (e) => {
+    console.log(e);
     if (e.currentTarget === e.target) {
       onClose();
     }

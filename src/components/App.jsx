@@ -78,10 +78,9 @@ export const App = () => {
     }
 
     handleFetchItems(inputValue, page);
-    setLoading(false);
-    
 
-  }, [inputValue, page, loading]);
+    
+  }, [inputValue, page]);
 
   function handleFormSubmit(inputValue) {
     setInputValue('');
